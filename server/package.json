@@ -2,28 +2,23 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "nodemon src/app.js ",
-    "lint": "node_modules/.bin/eslint **/*.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "BarkhaRani",
+  "email": "ranib1@hawkmail.newpaltz.edu",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "morgan": "^1.9.1",
-    "nodemon": "^1.18.10"
-  },
-  "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.2.2"
+    "fbgraph": "^1.4.4",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.19",
+    "multer": "^1.4.1",
+    "rand-token": "^0.4.0"
   }
 }
