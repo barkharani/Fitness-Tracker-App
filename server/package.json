@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "BarkhaRani",
-  "email": "ranib1@hawkmail.newpaltz.edu",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",

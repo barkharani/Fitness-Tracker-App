@@ -43,7 +43,7 @@ module.exports = {
             res.status(200).json({ ok: true })
         } catch (error) {
             console.log(error)
-            return res.status(500).json({ error: 'user exists' })
+            return res.status(500).json({ error: 'Пользователь с данным логином уже существует' })
         }
     },
 
@@ -54,10 +54,10 @@ module.exports = {
             if (comparePwd) {
                 res.status(200).json({ok: true})            
               } else {
-                res.status(500).json({error: 'user not found'})
+                res.status(500).json({error: 'Пользователь не найден'})
             }
         } catch (error) {
-            res.status(500).json({error: 'Internal Error'})
+            res.status(500).json({error: 'Неизвестная ошибка'})
         }
     },
 }

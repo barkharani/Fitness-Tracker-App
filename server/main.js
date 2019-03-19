@@ -22,5 +22,5 @@ app.use(async (req, res, next) => {
     next();
 });
 app.listen(port, () => {
-    console.log('The fitness tracker application is running on' + port)
+    console.log('app running on port ' + port)
 })
