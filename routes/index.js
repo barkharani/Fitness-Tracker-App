@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 	/**
 	 * Module dependencies.
 	 */
@@ -16,3 +17,13 @@
 
   
 	module.exports = router;
+=======
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+	console.log(req.body);
+	res.end();
+};
+>>>>>>> fe21eb0b1ece6c74199febdc621f626f23d91648
