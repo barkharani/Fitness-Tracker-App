@@ -16,6 +16,7 @@ global.config = require('./config/config.json')
 require('dotenv').config();
 require('./config/db');
 var user = require('./routes/user');
+var index = require('./routes/index');
 
 /**
  * creating mysql connection.
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
  */
 
 app.use('/',user);
+app.use('/',index);
 // app.post('/signin', user.signin);
 // app.post('/check_user', user.check_user);
 
