@@ -39,10 +39,7 @@ app.use(bodyParser.json());
  */
 
 app.use('/',user);
-<<<<<<< HEAD
 app.use('/',index);
-=======
->>>>>>> fe21eb0b1ece6c74199febdc621f626f23d91648
 // app.post('/signin', user.signin);
 // app.post('/check_user', user.check_user);
 
