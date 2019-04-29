@@ -30,7 +30,7 @@
 									<div class="form-group">
 											Or Sign In With 
 									<a href="#" class="btn btn-primary" v-on:click="loginFacebook()"><span class="fa fa-facebook"></span> Facebook</a>
-									<a href="#" class="btn" id='google-signin-button' v-on:click="loginGoogle()"><span class="fa fa-google-plus"></span> Google</a> 
+									<a href="#" class="btn" id='google-signin-button' ><span class="fa fa-google-plus"></span> Google</a> 
 											
 									</div>
 											<hr>
@@ -55,7 +55,7 @@ window.fbAsyncInit = function() {
 	FB.init({
 		cookie: true,  // enable cookies to allow the server to access the session
 		xfbml: true,  // parse social plugins on this page
-		appId: '2445245595507025',
+		appId: '522269604611938',
 		autoLogAppEvents: true,
 		xfbml: true,
 		version: 'v2.6'
@@ -90,44 +90,42 @@ export default {
 	methods: {
 		onSignIn (googleUser) {
 			const profile = googleUser.getBasicProfile();
-			console.log('google  logine success')
+			const self = this;
+			console.log('google  login success')
 			
 			const userData = {
 				name: profile.getName(),
 				email: profile.getEmail()
 			}
-			Vue.http.post('signin/social', userData)
-				
+			Vue.http.post('signin/social', userData)				
 			.then((data) => {
 				console.log(data)
+				NProgress.done()
 				if (data.body && data.body.results && data.body.results.status) {
 					auth.setToken(data.body.results.token);
-					localStorage.setItem('user_data', JSON.stringify(data.body.results.user));
-					NProgress.done()
+					localStorage.setItem('user_data', JSON.stringify(data.body.results.user));					
 					self.$toastr.success("You are logged in successfully", "Login Success");
 					self.$router.push({ name: 'HomeView' });
 					return true; 
 				} else {
-					let msg = data.body.results.message || 'Unable to Login';
-					NProgress.done()
+					let msg = data.body.results.message || 'Unable to Login';					
 					self.$toastr.error(msg, "Google Login Error!");
 					return false;
 				}
 			})
 			.catch((err) => {
-				console.log("google login----------errr", err)
+				NProgress.done()
+				console.log("login----------errr", err)
 				if (err.body && err.body.results.message) {
-					NProgress.done()
 					self.$toastr.error(err.body.results.message, "Google Login Error!");
 					return false;
 				} else {
-					NProgress.done()
 					self.$toastr.error( "Google Login Error!");
 					return false;
 				}
 			});
 			
-			this.signOut();		
+			this.signOut();	
 		},
 		signOut() {
 			var auth2 = gapi.auth2.getAuthInstance();

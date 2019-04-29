@@ -8,6 +8,8 @@ import VueResource from 'vue-resource';
 import VeeValidate from 'vee-validate';
 window.$ = window.jQuery = require('jquery'); // eslint-disable-line
 require('bootstrap');
+require('eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js');
+require('eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css');
 const toastr = require('toastr');
 
 import store from './vuex/store';

@@ -2,8 +2,17 @@
     <div>
       <div class="row ">
         <div class="panel">
-          <h2 class="panel_head">Profile Setting</h2>
-          <form >              
+          <h2 class="panel_head">Setting</h2>
+          <form >    
+              <div class="form-group">
+                    <img class="img-style " v-if="!userData.profile_picture" :src="defaultImage">
+                    <img class="img-style " :src="userData.profile_picture" v-else>
+                    <label class="btn-bs-file btn btn-md btn-block  mt-20">
+                      Upload Picture
+                      <input type="file" id="profile-picture" v-on:change="onFileSelection('profile-picture')">
+                    </label>
+              </div>       
+              
               <div class="form-group">
                   <input type="text" name="fname"  class="form-control " v-model="user.name" placeholder="Name"
                       required autocomplete="off">
@@ -56,11 +65,14 @@ import auth from '../../auth'
 					gender: '',
 					name: '',
 					mobile: '',
-				}
+        },
+        defaultImage: '../../static/img/logo.jpg',
+        userData:{}
       };
     },
-    created() {''
-      // this.status.user_id = 
+    created() {
+      console.log('created')
+      this.userData = auth.getUser();
       window.$('#dob').val(this.userData.dob);
       this.user.dob = this.userData.dob ;
       this.user.gender = this.userData.gender;
@@ -69,17 +81,48 @@ import auth from '../../auth'
       this.user.id = this.userData.id
     },
     computed: {
-        userData() {
-          return auth.getUser();      
-        },
+        // userData() {
+        //   return auth.getUser();      
+        // },
       },
     mounted() {
+      console.log('mounted')
       window.$('#dateofbirth').datetimepicker({
         format: 'MM/DD/YYYY',
         // maxDate: new Date()
       });
     },
     methods: {
+      
+      onFileSelection(id) {
+      const input = window.document.getElementById(id);
+      if (input.files[0].type.indexOf('image') !== -1) {
+        const fd = new FormData();
+        fd.append('profile_picture', input.files[0]);
+        this.savePicture(fd);
+      } else {
+        this.$toastr.warning('Please Upload Only Images');
+      }
+    },
+    savePicture(picture) {
+      NProgress.start()
+      const self=this;
+      Vue.http.put('user/picture', picture, {params:{id:self.userData.id}}).then((data) => {
+        NProgress.done()
+        self.$toastr.success("Profile updated.");
+        auth.updateCurrentUser()
+        .then((data) => {
+          self.userData = data;
+        }, error => {
+							// error callback
+							
+					});
+      })
+      .catch((err) => {
+        NProgress.done()
+        self.$toastr.error(error, "Error while updating profile!");
+      });
+    },
       update(){
         this.user.dob = this.isoDate('dob')
         const self = this;
@@ -89,11 +132,11 @@ import auth from '../../auth'
         Vue.http.put('users', self.user)
         .then((data) => {
           NProgress.done()
-          this.$toastr.success("Status posted.");
+          this.$toastr.success("Profile updated.");
         })
         .catch((err) => {
           NProgress.done()
-          this.$toastr.error(error, "Error while post status!");
+          this.$toastr.error(error, "Error while updating profile!");
         });
       
       }, 
@@ -120,5 +163,10 @@ import auth from '../../auth'
       padding-bottom: 7%;
     }
   
+    .img-style {
+  width: 120px;
+  height: 130px;
+  margin: 10px auto !important;
+}
   </style>
   

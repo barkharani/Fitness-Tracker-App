@@ -31,11 +31,11 @@
 											<div v-if="!success"> 
 													<form  class="login_form">
 															<div class="form-group">
-																	<input type="text" name="name"  class="form-control " v-model="newUser.name" placeholder="Name"
+																	<input type="text" name="fname"  class="form-control " v-model="newUser.name" placeholder="Name"
 																			required autocomplete="off">
 															</div>
 															<div class="form-group">
-																	<input type="text" name="mobile"  class="form-control " v-model="newUser.mobile" placeholder="Mobile"
+																	<input type="text" name="lname"  class="form-control " v-model="newUser.mobile" placeholder="Mobile"
 																			required autocomplete="off">
 															</div>
 															<div class="form-group">                                        
@@ -55,12 +55,7 @@
 																	
 																	</div>
 															<hr>
-													<div class="form-group">
-															Or Sign In With 
-													<a href="#" class="btn btn-primary" v-on:click="loginFacebook()"><span class="fa fa-facebook"></span> Facebook</a>
-													<a href="#" class="btn btn-danger" v-on:click="loginGoogle()"><span class="fa fa-google-plus"></span> Google</a> 
-															
-													</div>
+													
 													<hr>
 													<div class="form-group">
 															Or Already member? <a href="#/signin" class="" >Sign In</a> Here.
@@ -134,12 +129,6 @@
 					NProgress.done()					
 					return;
 				}				
-			},
-			loginFacebook(){
-				console.log('Clieckd loginFacebook');
-			},
-			loginGoogle(){
-				console.log('Clieckd loginGoogle');
 			},
 		}
 		

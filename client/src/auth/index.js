@@ -19,6 +19,27 @@ export default {
     const user = JSON.parse(localStorage.getItem('user_data'));
     return user;
   },
+
+  updateCurrentUser(){
+    console.log(this.getUser().id)
+    return new Promise((resolve, reject) => {
+      Vue.http.get('user/me', {
+        params: {id:this.getUser().id},
+      })
+      .then((data) => {
+        if (data.body && data.body.results && data.body.results.status) {
+          this.setToken(data.body.results.token);
+          localStorage.setItem('user_data', JSON.stringify(data.body.results.user));
+          resolve(data.body.results.user)
+        } else {
+          reject(null)
+        }
+      })
+      .catch((err) => {
+        reject(null)
+      });
+    });
+  },
   
   login(payload) {
     return new Promise((resolve, reject) => {

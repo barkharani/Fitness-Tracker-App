@@ -19,6 +19,7 @@
           <li class="active"><a href="#/dashboard/home">Home <span class="sr-only">(current)</span></a></li>
           <li><a href="#/dashboard/profile">Profile Management</a></li>
           <li><a href="#/dashboard/friends">Friends</a></li>
+          <li><a href="#/dashboard/users">Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workouts <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -38,29 +39,11 @@
         </ul>
         
         <div class="username-main text-right position-relative">
-            <span>{{userData.first_name}}</span>
+            <span>{{userData.name}}</span>
+            <a v-on:click="logout()">
+                <span class=" btn logout-icon"></span>Logout</a>
           </div>
-        <div class="dropdown img-box logout-hover">
-            <a type="button" data-toggle="dropdown">
-              <img class="fa fa-user-circle user-icon" style="height: 34px; width: 34px; border-radius: 100px" v-if="displayImage" :src="displayImage" :title="userData.first_name"/>
-              <i class="fa fa-user-circle user-icon" style="font-size:30px; margin-top:2px;" v-else :title="userData.first_name"/>
-            </a>
-            <ul class="dropdown-menu logout-dropdown">
-              <li class="logout-hover">
-                <a href="#/dashboard/profile">
-                  <span class="dropdown-icon profile-icon">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                  </span>Profile
-                  </a>
-              </li>
-              <li class="logout-hover">
-                <a v-on:click="logout()">
-                  <span class="dropdown-icon logout-icon">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                  </span>Logout</a>
-              </li>
-            </ul>
-          </div>
+        
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -117,7 +100,7 @@
 }
 
 .logout-icon {
-  color: red;
+  color: white;
 }
 
 .profile-icon {

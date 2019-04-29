@@ -10,6 +10,7 @@ import Excersice from './../components/excersice/Excersice';
 import FatToFit from './../components/workouts/FatToFit';
 import FriendList from './../components/friends/FriendList';
 import Profile from './../components/profile/Profile';
+import AllUsers from './../components/users/AllUsers';
 import auth from '../auth';
 
 
@@ -75,6 +76,11 @@ export default new Router({
       name: 'ProfileView',      
       component: Profile,
     },
+    {
+      path: '/dashboard/users',
+      name: 'AllUsersView',      
+      component: AllUsers,
+    },   
     ],
   },
   {

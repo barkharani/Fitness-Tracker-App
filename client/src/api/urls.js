@@ -1,5 +1,5 @@
 /* global window */
-let API_HOST = "http://localhost:3000"
+let API_HOST = "http://localhost:3003"
 
 module.exports = {
   API_HOST,

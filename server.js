@@ -26,7 +26,7 @@ var index = require('./routes/index');
 /**
  * all environments.
  */
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3003);
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({
