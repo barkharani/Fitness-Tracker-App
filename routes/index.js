@@ -7,6 +7,15 @@
 	const exerciseCtrl = require('./../controllers/exercise');
 	const workoutCtrl = require('./../controllers/workout');
 	const logCtrl = require('./../controllers/log');
+	const statusCtrl = require('./../controllers/status');
+	const commentsCtrl = require('./../controllers/comments');
+
+	router.post('/status', statusCtrl.createStatus);
+	router.get('/status', statusCtrl.getAllStatus);
+	router.put('/status', statusCtrl.updateStatus);
+
+	router.post('/comments', commentsCtrl.createComments);
+	router.get('/status', commentsCtrl.getAllComments);
 
 	router.post('/exercise/type', exerciseCtrl.createType);
 	router.get('/exercise/types', exerciseCtrl.getAllTypes);
