@@ -3,6 +3,9 @@ node_modules
 node_modules/
 /dist
 
+public
+public/upload
+
 # local env files
 .env.local
 .env.*.local

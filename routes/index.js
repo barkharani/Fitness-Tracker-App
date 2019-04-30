@@ -9,13 +9,21 @@
 	const logCtrl = require('./../controllers/log');
 	const statusCtrl = require('./../controllers/status');
 	const commentsCtrl = require('./../controllers/comments');
+	const friendCtrl = require('./../controllers/friend');
 
 	router.post('/status', statusCtrl.createStatus);
 	router.get('/status', statusCtrl.getAllStatus);
 	router.put('/status', statusCtrl.updateStatus);
+	router.delete('/status', statusCtrl.deleteStatus);
 
 	router.post('/comments', commentsCtrl.createComments);
-	router.get('/status', commentsCtrl.getAllComments);
+	// router.get('/status', commentsCtrl.getAllComments);
+
+router.post('/friend', friendCtrl.createFriend);
+router.get('/friends', friendCtrl.getAllFriends);
+router.put('/friend', friendCtrl.updateFriend);
+router.delete('/friend', friendCtrl.removeFriend);
+router.get('/friend', friendCtrl.getFriend);
 
 	router.post('/exercise/type', exerciseCtrl.createType);
 	router.get('/exercise/types', exerciseCtrl.getAllTypes);

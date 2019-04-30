@@ -7,7 +7,7 @@
               <div class="form-group">
                     <img class="img-style " v-if="!userData.profile_picture" :src="defaultImage">
                     <img class="img-style " :src="userData.profile_picture" v-else>
-                    <label class="btn-bs-file btn btn-md btn-block  mt-20">
+                    <label class="btn-bs-file btn btn-md btn-block  ">
                       Upload Picture
                       <input type="file" id="profile-picture" v-on:change="onFileSelection('profile-picture')">
                     </label>
@@ -167,6 +167,11 @@ import auth from '../../auth'
   width: 120px;
   height: 130px;
   margin: 10px auto !important;
+}
+.btn-block{
+display: block;
+    width: 100%;
+    text-align: left;
 }
   </style>
   

@@ -61,6 +61,15 @@ exports.getWorkoutType=function(req,res){
 }
 
 exports.createWorkout=function(req,res){
+
+  if (req.body.start_date) {
+    req.body.start_date = new Date(req.body.start_date)
+  }
+
+  if (req.body.last_date) {
+    req.body.last_date = new Date(req.body.last_date)
+  }
+
   const query = sql = 'INSERT INTO workouts SET ?';
   connection.query(query, req.body, (err, result) => {
     if (err) {
@@ -73,7 +82,7 @@ exports.createWorkout=function(req,res){
 
 }
 exports.getAllWorkouts=function(req,res){
-  var sql = 'SELECT * FROM `workouts`';
+  var sql = `SELECT * FROM workouts where user_id=${req.query.user_id}`;
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);

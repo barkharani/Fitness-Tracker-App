@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="row">
-        <div class="row galary">
+        <div class="row galary" style="    width: 80%;
+    position: relative;
+    margin: 0 auto;">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
@@ -13,33 +15,34 @@
                 <li data-target="#carousel-example-generic" data-slide-to="5"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="6"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="8"></li>
               </ol>
                 
                   <!-- Wrapper for slides -->
-                  <div class="carousel-inner" role="listbox">
+                  <div class="carousel-inner" role="listbox" style="margin-left: -35px;">
                     <div class="item active">
-                      <img src="../../assets/slider/1.jpg" >
+                      <img src="../../assets/1.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/2.jpg" >
+                      <img src="../../assets/2.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/3.jpg" >
+                      <img src="../../assets/3.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/4.jpg" >
+                      <img src="../../assets/4.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/5.jpg" >
+                      <img src="../../assets/5.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/6.jpg" >
+                      <img src="../../assets/6.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/7.jpg" >
+                      <img src="../../assets/7.jpg" >
                     </div>
                     <div class="item">
-                      <img src="../../assets/slider/8.jpg" >
+                      <img src="../../assets/8.jpg" >
                     </div>
                   </div>
                 
@@ -75,9 +78,10 @@
           <div class="container">
             <span class="status_user">{{item.status_user}}:</span>{{item.status_title}}  
             <div class="text-right position-relative"> 
-              <button class="btn" v-on:click="likeStatus(item)">Like <span class="badge">{{item.like_count}}</span></button>
+              <button class="btn btn-success" v-on:click="likeStatus(item)">Like <span class="badge">{{item.like_count}}</span></button>
+              <button class="btn btn-danger" v-on:click="delStatus(item)">Delete </button>
               <!-- Button trigger modal -->
-              <button type="button" class="btn " data-toggle="modal" data-target="#myModal" v-on:click.stop="openModalCommentStatus($event,item)">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click.stop="openModalCommentStatus($event,item)">
                 Comment
               </button>
             </div>   
@@ -243,6 +247,19 @@ export default {
           NProgress.done()
           this.$toastr.error(error, "Error in like status!");
         });
+    },
+    delStatus(status) {
+      const self = this;
+      Vue.http.delete('status', {params:{"user_id": this.userData.id, status_id: status.id}})
+        .then((data) => {
+          NProgress.done();
+          this.$toastr.success("Status deleted!");
+          self.getStatus()
+        })
+        .catch((err) => {
+          NProgress.done()
+          this.$toastr.error(error, "Error in deleting status!");
+        });
     }
   }
 };
@@ -274,17 +291,16 @@ export default {
 }
 
 img {
-	width: 600px !important;
-	height: 400px !important;
-	/* text-align: center; */
+	width: 650px !important;
+	height: 300px !important;
+	text-align: center;
 	/* padding: 20px; */
 }
 .border {
 	border: 1px solid gray;
 }
 .item {
-	text-align: center !important;
-	margin-left: 50px;
+	margin-left: 150px;
 }
 .btn {
 	border-radius:20px 

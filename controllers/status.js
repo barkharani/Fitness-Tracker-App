@@ -59,3 +59,15 @@ exports.createStatus = function (req, res) {
       }
     });
 }
+
+exports.deleteStatus = function (req, res) {
+const query = `DELETE  from status where id=${req.query.status_id} and user_id=${req.query.user_id};`
+connection.query(query, (err, result) => {
+  if (err) {
+    console.log(err);
+    res.status(500).send(err);
+  } else {
+    res.status(200).send(result);
+  }
+});
+}

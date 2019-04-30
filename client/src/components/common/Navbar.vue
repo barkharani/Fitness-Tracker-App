@@ -17,15 +17,21 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#/dashboard/home">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#/dashboard/profile">Profile Management</a></li>
+          <li><a href="#/dashboard/profile">Setting</a></li>
           <li><a href="#/dashboard/friends">Friends</a></li>
           <li><a href="#/dashboard/users">Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workouts <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#/dashboard/fattofit">Fat To Fit</a></li>
-              <li><a href="#/dashboard/fattofit">3 Day Fat Loss</a></li>
-              <li ><a href="#/dashboard/fattofit">3 Day Split</a></li>
+              <li><a href="#/dashboard/workouts-walking">Walking</a></li>
+              <li><a href="#/dashboard/workouts-running">Running</a></li>
+              <li ><a href="#/dashboard/workouts-cycling">Cycling</a></li>
+              <li ><a href="#/dashboard/workouts-rover">Rower</a></li>
+              <li ><a href="#/dashboard/workouts-stairstepper">Stair Stepper</a></li>
+              <li ><a href="#/dashboard/workouts-hiking">Hiking</a></li>
+              <li ><a href="#/dashboard/workouts-yoga">Yoga</a></li>
+              <li ><a href="#/dashboard/workouts-swimming">Swimming</a></li>
+              <li ><a href="#/dashboard/workouts-wheelchair">Wheelchair</a></li>
             </ul>
           </li>
           <li class="dropdown">

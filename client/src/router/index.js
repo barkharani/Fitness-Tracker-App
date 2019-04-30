@@ -7,7 +7,15 @@ import dashboardComponent from './../components/common/Dashboard';
 import pageNotFoundComponent from './../components/common/PageNotFound';
 import Home from './../components/home/Home';
 import Excersice from './../components/excersice/Excersice';
-import FatToFit from './../components/workouts/FatToFit';
+import Walking from './../components/workouts/Walking';
+import Running from './../components/workouts/Running';
+import Cycling from './../components/workouts/Cycling';
+import Rover from './../components/workouts/Rover';
+import StairStepper from './../components/workouts/StairStepper';
+import Hiking from './../components/workouts/Hiking';
+import Yoga from './../components/workouts/Yoga';
+import Swimming from './../components/workouts/Swimming';
+import WheelChair from './../components/workouts/WheelChair';
 import FriendList from './../components/friends/FriendList';
 import Profile from './../components/profile/Profile';
 import AllUsers from './../components/users/AllUsers';
@@ -67,9 +75,49 @@ export default new Router({
       component: Excersice,
     },
     {
-      path: '/dashboard/fattofit',
-      name: 'FatToFitView',      
-      component: FatToFit,
+      path: '/dashboard/workouts-walking',
+      name: 'WalkingView',      
+      component: Walking,
+    },
+    {
+      path: '/dashboard/workouts-running',
+      name: 'WalkingView',      
+      component: Running,
+    },
+    {
+      path: '/dashboard/workouts-cycling',
+      name: 'WalkingView',      
+      component: Cycling,
+    },
+    {
+      path: '/dashboard/workouts-rover',
+      name: 'WalkingView',      
+      component: Rover,
+    },
+    {
+      path: '/dashboard/workouts-stairstepper',
+      name: 'WalkingView',      
+      component: StairStepper,
+    },
+    {
+      path: '/dashboard/workouts-hiking',
+      name: 'WalkingView',      
+      component: Hiking,
+    },
+    {
+      path: '/dashboard/workouts-yoga',
+      name: 'WalkingView',      
+      component: Yoga,
+    },
+    {
+      path: '/dashboard/workouts-swimming',
+      name: 'WalkingView',      
+      component: Swimming,
+    },
+    {
+      path: '/dashboard/workouts-wheelchair',
+      name: 'WalkingView',      
+      component: WheelChair,
     },
     {
       path: '/dashboard/profile',
