@@ -3,10 +3,17 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/yoga.png" >
+                  <img class="workout-gif" src="../../assets/workout/yog.gif" style= width:300px;height:300px;>
+                  <h2><b>Yoga</b></h2>
+          
               </div>
+              <body>
+                  <p>
+                  Yoga is a mind and body practice with a 5,000-year history in ancient Indian philosophy. Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation.
+                  </p>
+                  </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts yoga.......</p>
+                    
                 </div>
               
             </div>      
@@ -33,7 +40,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-Yoga </h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

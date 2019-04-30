@@ -3,10 +3,16 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/rower.png" >
+                  <img class="workout-img" src="../../assets/workout/rower.gif" style= width:300px;height:300px;>
+                  <h2><b>Rower</b></h2>
               </div>
+              <body>
+              <p>
+              A great non-weight-bearing exercise machine, a rowing machine uses both your upper- and lower-body muscles to increase cardiovascular conditioning. Since you’re using your entire body, targeted muscle soreness is unlikely—you’ll more likely feel the soreness all over as you train your cardio ability and burn fat quickly.
+              </p>
+              </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts rower.......</p>
+                    
                 </div>
               
             </div>      
@@ -33,7 +39,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-Rower</h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

@@ -3,10 +3,20 @@
       <div class="row ">
         <div class="content">
           <div class="img-cls">
-              <img class="workout-img" src="../../assets/workout/walking.png" >
+              <img class="workout-gif" src="../../assets/workout/walk.gif" style= width:300px;height:300px;> 
+              <h2><b>Walking</b></h2>
           </div>
+          <body>
+          <p>
+          Walking may be the simplest way to work out. You can do it almost anywhere, and it’s a snap to get started: Just put one foot in front of the other.
+
+There are many great reasons to walk. Your heart will get stronger, you’ll lower your blood pressure, and your bones will get stronger. Walking also eases stress, helps you sleep better, and can boost your outlook on life.
+
+Walk at a brisk pace for 30 minutes or more on most days. Do it alone or with a friend. Try a walking club or recruit your family for an after-dinner walk. All you need is a pair of walking shoes.
+          </p>
+          </body>
             <div class="desc-cls">
-                <p>Here is somthing about workouts walking.......</p>
+                
             </div>
           
         </div>      
@@ -56,6 +66,7 @@
                     <div class="form-group">                                        
                         <input type="text" name="email" class="form-control" v-model="workout.duration"
                             placeholder="Duration" autofocus required>
+                            <small>Total Duration</small>
                     </div>
                     <div class="form-group">
                         <input type="text" name="password"  class="form-control " v-model="workout.weight" placeholder="Weight"

@@ -3,10 +3,16 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/stairstepper.png" >
+                  <img class="workout-img" src="../../assets/workout/stair.gif" style= width:300px;height:300px;>
+                  <h2><b>Stair Stepper</b></h2>
               </div>
+              <body>
+              <p>
+              If you’re like most gym goers, you probably walk right by the stair climber without giving it a second glance. After all, if you need to do cardio, you’re going to hop on the treadmill, elliptical, or bike. But you might want to rethink that attitude. Stair climbers are great if you want an efficient workout because you can burn a lot of calories in a short amount of time.
+              </p>
+              </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts stairstepper.......</p>
+                   
                 </div>
               
             </div>      
@@ -33,7 +39,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-StairStepper </h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

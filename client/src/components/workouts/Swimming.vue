@@ -3,10 +3,16 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/swimming.png" >
+                  <img class="workout-gif" src="../../assets/workout/swim.gif" style= width:300px;height:300px;>
+                  <h2><b>Swimming</b></h2>
               </div>
+              <body>
+              <p>
+              Swimming builds strength and cardio abilities simultaneously. Though it's a low-impact workout, swimming produces high-power results. It is typically considered an aerobic exercise, but exercising in water also provides moderate resistance. This can in turn build strength.
+              </p>
+              </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts swimming.......</p>
+                   
                 </div>
               
             </div>      
@@ -33,7 +39,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-Swimming </h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

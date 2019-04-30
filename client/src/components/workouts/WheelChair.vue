@@ -3,10 +3,18 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/wheelchair.png" >
+                  <img class="workout-gif" src="../../assets/workout/wheel.gif" style= width:300px;height:300px;>
+                  <h2><b>Wheel Chair</b></h2>
               </div>
+              <body>
+               <p>
+               As a wheelchair user, getting active will bring you important health benefits and can help you manage daily life, too.
+
+Regular aerobic exercise – the kind that raises your heart rate and causes you to break a sweat – and muscle-strengthening exercise are just as important for the health and wellbeing of wheelchair users as they are for other adults.
+              </p>
+              </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts wheelchair.......</p>
+                   
                 </div>
               
             </div>      
@@ -33,7 +41,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-WheelChair </h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

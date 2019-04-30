@@ -3,10 +3,18 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/cycling.png" >
+                  <img class="workout-gif" src="../../assets/workout/cycling.gif" style= width:300px;height:300px;>
+                  <h2><b>Cycling</b></h2>
               </div>
+              <body>
+              <p>
+              Cycling is a healthy, low-impact exercise that can be enjoyed by people of all ages, from young children to older adults. It is also fun, cheap and good for the environment.
+
+Riding to work or the shops is one of the most time-efficient ways to combine regular exercise with your everyday routine. An estimated one billion people ride bicycles every day – for transport, recreation and sport.
+              </p>
+              </body>
                 <div class="desc-cls">
-                    <p>Here is somthing about workouts cycling.......</p>
+                   
                 </div>
               
             </div>      
@@ -33,7 +41,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-Cycling</h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">

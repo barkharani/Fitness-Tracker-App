@@ -3,10 +3,16 @@
       <div class="row ">
         <div class="content">
           <div class="img-cls">
-              <img class="workout-img" src="../../assets/workout/hiking.png" >
+              <img class="workout-img" src="../../assets/workout/hike.gif" style= width:300px;height:300px;>
+                  <h2><b>Hiking</b></h2>
           </div>
+          <body>
+          <p>
+          Hiking is a powerful cardio workout that can: Boost bone density, since walking is a weight-bearing exercise. Build strength in your glutes, quadriceps, hamstrings, and the muscles in your hips and lower legs. Strengthen your core.
+          </p>
+          </body>
             <div class="desc-cls">
-                <p>Here is somthing about workouts hiking.......</p>
+              
             </div>
           
         </div>      
@@ -33,7 +39,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
+              <h4 class="modal-title" id="myModalLabel">Workout-Hiking</h4>
             </div>
             <div class="modal-body">
                 <form  class="login_form">
