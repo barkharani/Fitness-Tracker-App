@@ -209,7 +209,7 @@ Regular aerobic exercise – the kind that raises your heart rate and causes you
                 method: 'share',
                 display: 'popup',
                 layout:"button_count",
-                href: 'https://www.facebook.com/alora3333',
+                href: 'https://hanif-test.herokuapp.com/',
               }, function(response){});
             }
         },
