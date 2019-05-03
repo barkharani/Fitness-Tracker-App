@@ -130,8 +130,8 @@ exports.createExercise = function (req, res) {
   });
 }
 exports.getAllExercises = function (req, res) {
-  var sql = 'SELECT * FROM `exercises`';
-  connection.query(sql, function (err, result) {
+  var sql = 'SELECT * FROM `exercises` WHERE user_id = ? AND exercise_type = ?';
+  connection.query(sql, [req.query.user_id, req.query.exercise_type], function (err, result) {
     if (err) {
       console.log(err);
       res.json(err)

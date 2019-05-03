@@ -49,9 +49,20 @@ id INT  NOT NULL AUTO_INCREMENT,
 workout_type TEXT,
 start_date date,
 last_date date,
-duration INT,
+duration varchar(10),
 weight INT,
 repeats INT,
+user_id INT,
+PRIMARY KEY(id),
+FOREIGN KEY(user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS exercises
+(
+id INT  NOT NULL AUTO_INCREMENT,
+exercise_type TEXT,
+food_name text,
+ref_url text,
 user_id INT,
 PRIMARY KEY(id),
 FOREIGN KEY(user_id) REFERENCES users(id)

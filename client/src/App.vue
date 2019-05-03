@@ -6,6 +6,28 @@
 
 <script>
 
+// Load the SDK asynchronously
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+  
+window.fbAsyncInit = function() {
+  FB.init({
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    appId            : '424152945040351',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v2.6'
+  });
+};
+
 export default {
   name: 'app',
   mounted() {
@@ -199,12 +221,17 @@ body::-webkit-scrollbar-track {
   display: block;
 }
 
+navbar-brand {
+    padding: 5px 10px;
+}
+
 .app_logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 30px;
-  width: 40px;
+  margin-top: 1px;
+  height: 40px !important;
+  width: 55px !important;
 }
 /*Positions*/
 

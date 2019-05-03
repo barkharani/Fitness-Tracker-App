@@ -82,7 +82,7 @@ exports.createWorkout=function(req,res){
 
 }
 exports.getAllWorkouts=function(req,res){
-  var sql = `SELECT * FROM workouts where user_id=${req.query.user_id}`;
+  var sql = `SELECT * FROM workouts where user_id=${req.query.user_id} and workout_type='${req.query.workout_type}'`;
   connection.query(sql, function (err, result) {
     if (err) {
       console.log(err);

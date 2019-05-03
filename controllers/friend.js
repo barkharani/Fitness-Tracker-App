@@ -10,7 +10,7 @@ exports.createFriend = function (req, res) {
     });
   }
   exports.getAllFriends = function (req, res) {
-    var sql = `Select * from users where id!=${req.query.id})`;
+    var sql = `Select * from users where id!=${req.query.id}`;
     connection.query(sql, function (err, result) {
       if (err) {
         console.log(err);

@@ -6,7 +6,9 @@ import Signup from '../components/Signup';
 import dashboardComponent from './../components/common/Dashboard';
 import pageNotFoundComponent from './../components/common/PageNotFound';
 import Home from './../components/home/Home';
-import Excersice from './../components/excersice/Excersice';
+import ExerciseeDailyDiet from './../components/exercise/DailyDiet';
+import ExerciseFatToFit from './../components/exercise/FatToFit';
+import ExerciseMuscleBuilding from './../components/exercise/MuscleBuilding';
 import Walking from './../components/workouts/Walking';
 import Running from './../components/workouts/Running';
 import Cycling from './../components/workouts/Cycling';
@@ -70,9 +72,19 @@ export default new Router({
       component: FriendList,
     },
     {
-      path: '/dashboard/excersice',
-      name: 'ExcersiceView',      
-      component: Excersice,
+      path: '/dashboard/exercise-daily-diet',
+      name: 'ExerciseeDailyDietView',      
+      component: ExerciseeDailyDiet,
+    },
+    {
+      path: '/dashboard/exercise-fat-to-fit',
+      name: 'ExerciseFatToFitView',      
+      component: ExerciseFatToFit,
+    },
+    {
+      path: '/dashboard/exercise-muscle-building',
+      name: 'ExerciseMuscleBuildingView',      
+      component: ExerciseMuscleBuilding,
     },
     {
       path: '/dashboard/workouts-walking',

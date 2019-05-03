@@ -1,7 +1,7 @@
 {
   "name": "dashboard",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Fitness Tracker Application",
   "author": "Barkha Rani",
   "private": true,
   "scripts": {

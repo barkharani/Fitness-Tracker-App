@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row ">
             <div class="heading">
-                    <h2>Fitness Tracker Users</h2>
+                    <h2>Fitness Tracker Friends</h2>
                     <small>You can view and add as well.</small>
             </div>
             <div class="user-list">
-                <div class="item" v-for="(item,index) in users">
+                <div class="item" v-for="(item,index) in friends">
                     <div class="user-block">
                          <div class="name"><b>{{item.name}} </b></div>
                          <div class="add-btn">                           
@@ -65,7 +65,7 @@ export default {
     name: 'friend-view',
     data() {
         return {      
-            users: [],
+            friends: [],
             selectedFriend: {
               name:'',
               gender:'',
@@ -76,7 +76,7 @@ export default {
         };
     },
     created() {
-        this.getUsers();
+        this.getFriends();
     },
     computed: {
         userData() {
@@ -97,11 +97,11 @@ export default {
         this.selectedFriend.dob = user.dob;
         window.$('.modal').modal('show');
     },
-        getUsers() {
+        getFriends() {
             var self = this;
-            Vue.http.get('users',{params: {id:this.userData.id}})
+            Vue.http.get('friends',{params: {id:this.userData.id}})
             .then((data) => {
-            self.users = data.body.users;
+            self.friends = data.body.friends;
             })
             .catch((err) => {
                         // do stuff

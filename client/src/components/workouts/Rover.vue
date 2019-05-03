@@ -3,7 +3,7 @@
           <div class="row ">
             <div class="content">
               <div class="img-cls">
-                  <img class="workout-img" src="../../assets/workout/rower.gif" style= width:300px;height:300px;>
+                 <img class="workout-img" src="../../assets/workout/rower.gif" style= width:300px;height:300px;>
                   <h2><b>Rower</b></h2>
               </div>
               <body>
@@ -11,9 +11,6 @@
               A great non-weight-bearing exercise machine, a rowing machine uses both your upper- and lower-body muscles to increase cardiovascular conditioning. Since you’re using your entire body, targeted muscle soreness is unlikely—you’ll more likely feel the soreness all over as you train your cardio ability and burn fat quickly.
               </p>
               </body>
-                <div class="desc-cls">
-                    
-                </div>
               
             </div>      
         </div>
@@ -25,21 +22,63 @@
                       </button>
                 </div>
                   <div class="desc-cls">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalHisory" v-on:click="getHisory()">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalHisory" v-on:click="getHisory(workout.workout_type)">
                                 View History
                               </button>
                   </div>
                 
-              </div>      
+              </div>  
+               <div id="shareBtn" class="btn btn-success clearfix" data-layout="button_count" data-size="large">Share On Facebook</div>    
         </div>
-      
+        <div class="row">
+            <div class="sarch-cls">
+                <div class="form-group">                                        
+                    <label for="">Search My Workout By:</label>
+                  <select @change="onChange($event)" class="form-control" v-model="key">
+                      <option value="walking">Walking</option>
+                      <option value="running">Running</option>
+                      <option value="cycling">Cycling</option>
+                      <option value="rower">Rower</option>
+                      <option value="stairstepper">Stair Stepper</option>
+                      <option value="hiking">Hiking</option>
+                      <option value="yoga">Yoga</option>
+                      <option value="swimming">Swimming</option>
+                      <option value="wheelchair">WheelChair</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Start Date</th>
+                      <th scope="col">Last Date</th>
+                      <th scope="col">Duration(MM:SS)</th>
+                      <th scope="col">Weight</th>
+                      <th scope="col">Repeats</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(item,index) in historyData2">
+                      <th scope="row">{{index+1}}</th>
+                      <td>{{item.start_date}}</td>
+                      <td>{{item.last_date}}</td>
+                      <td>{{item.duration}}</td>
+                      <td>{{item.weight}}</td>
+                      <td>{{item.repeats}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Workout-Rower</h4>
+                  <h4 class="modal-title" id="myModalLabel">Workout-Walking </h4>
                 </div>
                 <div class="modal-body">
                     <form  class="login_form">
@@ -60,15 +99,15 @@
                             </div>
                         </div>
                         <div class="form-group">                                        
-                            <input type="text" name="email" class="form-control" v-model="workout.duration"
+                            <input type="time" class="form-control" v-model="workout.duration"
                                 placeholder="Duration" autofocus required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="password"  class="form-control " v-model="workout.weight" placeholder="Weight"
+                            <input type="text" class="form-control " v-model="workout.weight" placeholder="Weight"
                                 required autocomplete="off">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="password"  class="form-control " v-model="workout.repeats" placeholder="Repeats"
+                            <input type="text" class="form-control " v-model="workout.repeats" placeholder="Repeats"
                                 required autocomplete="off">
                         </div>
                         
@@ -98,7 +137,7 @@
                               <th scope="col">#</th>
                               <th scope="col">Start Date</th>
                               <th scope="col">Last Date</th>
-                              <th scope="col">Duration</th>
+                              <th scope="col">Duration(MM:SS)</th>
                               <th scope="col">Weight</th>
                               <th scope="col">Repeats</th>
                             </tr>
@@ -132,7 +171,9 @@
         name: 'workouts-rower',
         data() {
           return { 
-            historyData:[],      
+            key: "",  
+            historyData:[],
+            historyData2:[],      
             workout: {
               workout_type: 'rower',
               start_date: '',
@@ -160,21 +201,46 @@
               format: 'MM/DD/YYYY',
               // maxDate: new Date()
             });
+             document.getElementById('shareBtn').onclick = function() {
+              FB.ui({
+                method: 'share',
+                display: 'popup',
+                layout:"button_count",
+                href: 'https://www.facebook.com/alora3333',
+              }, function(response){});
+            }
         },
         methods: {
-            getHisory(){
+          clearWorkout() {
+            this.workout.start_date = ''
+            this.workout.last_date = ''
+            this.workout.duration = ''
+            this.workout.weight = ''
+            this.workout.repeats = ''
+            window.$('#date1').val('')
+            window.$('#date2').val('')
+          },
+          onChange(event) {
+            // console.log(event.target.value)
+            this.getHisory(this.key, 'onChange')
+          },
+          getHisory(type, from='history'){
+            console.log('workout_type', type, from)
           var self = this;
           Vue.http.get('workouts', {params: {
             user_id: this.userData.id,
-            workout_type: self.workout.workout_type
+            workout_type: type
           }})
           .then((data) => {
-            self.historyData = data.body.workouts;
+            if (from==='onChange') {
+              self.historyData2 = data.body.workouts;
+            } else {
+              self.historyData = data.body.workouts;
+            }
           })
           .catch((err) => {
             // do stuff
           });
-
         },
           isoDate(id) {
               const val = window.document.getElementById(id).value;
@@ -200,6 +266,7 @@
                 NProgress.done()
                 window.$('.modal').modal('hide');
                 self.$toastr.success("Workout added.");
+                self.clearWorkout()
               })
               .catch((err) => {
                 NProgress.done()
@@ -237,6 +304,10 @@
         display: inline-block;
         padding-left: 50px;
         padding-right: 50px;
+      }
+
+      .sarch-cls {
+        padding: 30px;
       }
         .workout-img{
           align-content: left;

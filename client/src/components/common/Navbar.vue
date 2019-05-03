@@ -10,9 +10,9 @@
               <span class="icon-bar"></span>
             </button>
         
-        <a class="navbar-brand" href="#">Fitness Tracker</a>
+        <a class="navbar-brandc " href="#"><img src="../../assets/app-logo.gif" class="app_logo"></a>
       </div>
-  
+      
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -35,11 +35,11 @@
             </ul>
           </li>
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exersice <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Diets <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#/dashboard/excersice">Fat To Fit</a></li>
-                <li><a href="#/dashboard/excersice">3 Day Fat Loss</a></li>
-                <li ><a href="#/dashboard/excersice">3 Day Split</a></li>
+                <li><a href="#/dashboard/exercise-fat-to-fit">Fat-To-Fit</a></li>
+                <li><a href="#/dashboard/exercise-muscle-building">Muscle Building</a></li>
+                <li ><a href="#/dashboard/exercise-daily-diet">Daily Diet</a></li>
               </ul>
             </li>
         </ul>
@@ -146,6 +146,13 @@ color: #999;
   cursor: pointer;
 }
 
+navbar-brandc {
+  float: left;
+  height: 50px;
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 20px;
+}
 .img-box {
   position: absolute;
   right: 30px;
