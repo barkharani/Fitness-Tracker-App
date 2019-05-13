@@ -49,6 +49,13 @@
             <a v-on:click="logout()">
                 <span class=" btn logout-icon"></span>Logout</a>
           </div>
+          <div class="search-container">
+    <form id="search-form">
+            <input value="" id="search-field" class="search-field" type="search" /><button id="search-button" class="search-button">Search</button>
+               </form>
+               
+</div>
+</div>
         
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
