@@ -57,3 +57,6 @@ exports.createFriend = function (req, res) {
       }
     });
   }
+var current_search = {
+    search_string: ''
+};
